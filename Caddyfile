@@ -20,9 +20,11 @@
 	# cache rather than an immutable one — a deploy must be able to replace them.
 	header /assets/* Cache-Control "public, max-age=3600"
 
-	# Demo model weights and video frames are fixed content; cache them hard.
+	# Demo model weights, exported fits and video frames are fixed content per
+	# deploy; cache them hard.
 	header /demos/*/frames/* Cache-Control "public, max-age=604800"
 	header /demos/*/model.json Cache-Control "public, max-age=86400"
+	header /demos/*/demo-data.js Cache-Control "public, max-age=86400"
 
 	header {
 		X-Content-Type-Options nosniff

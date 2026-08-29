@@ -49,6 +49,7 @@ index.html            the portfolio page
 404.html              self-contained error page — no external dependencies
 assets/css/style.css  hand-written CSS, dark and light themes
 assets/js/main.js     ~200 lines of vanilla JS, no libraries
+demos/opslab/         live SLA breach scorer (bundled from its own repo)
 demos/churn/          live churn scorer      (bundled from its own repo)
 demos/digits/         live digit recogniser  (bundled from its own repo)
 demos/traffic/        annotated playback     (bundled from its own repo)
@@ -58,19 +59,29 @@ railway.json          Railway build and deploy config
 render.yaml           Render Blueprint
 ```
 
-The three demos are vendored copies of the `docs/` directory of each project
-repository, so the site has no external runtime dependency: every link on the
-page resolves within this deployment. Their sources of truth remain
+The four demos are vendored copies of each project's own demo directory, so the
+site has no external runtime dependency: every link on the page resolves within
+this deployment. Their sources of truth remain
+[opslab](https://github.com/pr1317/opslab),
 [customer-churn-analytics](https://github.com/pr1317/customer-churn-analytics),
 [handwritten-digit-recognition](https://github.com/pr1317/handwritten-digit-recognition)
-and [smart-traffic-management](https://github.com/pr1317/smart-traffic-management);
-re-copy `docs/` from those repositories to update a demo.
+and [smart-traffic-management](https://github.com/pr1317/smart-traffic-management).
+
+To refresh a demo, re-copy `docs/` from its repository. opslab keeps its demo in
+`web/` and generates two of the five files, so its refresh is:
+
+```bash
+cd ../opslab
+opslab export --out web/demo-data.js      # the fitted models, as data
+opslab try --out out/try && cp out/try/report.html web/report.html
+cp web/{index.html,app.js,opslab.js,demo-data.js,report.html} ../portfolio/demos/opslab/
+```
 
 ## The projects it links to
 
 | Project | What it is | Demo |
 |---|---|---|
-| [opslab](https://github.com/pr1317/opslab) | Operations analytics for BFSI back-office processes — process mining, SPC, SLA survival analysis and a Power BI model linter, on the standard library alone | — |
+| [opslab](https://github.com/pr1317/opslab) | Operations analytics for BFSI back-office processes — process mining, SPC, SLA survival analysis and a Power BI model linter, on the standard library alone | `/demos/opslab/` |
 | [handwritten-digit-recognition](https://github.com/pr1317/handwritten-digit-recognition) | 98.48% on MNIST; the finding is that deskewing beats model choice | `/demos/digits/` |
 | [customer-churn-analytics](https://github.com/pr1317/customer-churn-analytics) | ROC-AUC 0.846, and whether acting on the prediction pays for itself | `/demos/churn/` |
 | [smart-traffic-management](https://github.com/pr1317/smart-traffic-management) | YOLOv4-tiny and a centroid tracker turning a highway camera into telemetry | `/demos/traffic/` |
@@ -78,7 +89,7 @@ re-copy `docs/` from those repositories to update a demo.
 ## Notes on the build
 
 - **No framework, no bundler, no tracking.** One HTML file, one stylesheet,
-  ~200 lines of vanilla JS, and three vendored demos.
+  ~200 lines of vanilla JS, and four vendored demos.
 - **Responsive** from 320px up. Verified for horizontal overflow and touch
   target size at ten widths between 320 and 1920.
 - **Themes.** Dark by default; the toggle persists a choice in `localStorage`
