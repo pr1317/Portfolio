@@ -3,12 +3,31 @@
 The source of my personal site. A complete, self-contained static website —
 my CV, the projects behind it, and the live demos, all in one deployable unit.
 
-**Live:** <https://portfolio-production-f8b6.up.railway.app>
+**Live:** <https://pr1317.github.io> — also on Railway at
+<https://portfolio-production-f8b6.up.railway.app>, from the same tree.
 
 ## Deploying it
 
 The site is pure static files. There is no build step, no database and no
 server-side code, so it deploys anywhere that can serve a directory.
+
+### GitHub Pages
+
+`pr1317/pr1317.github.io` is a mirror of this repository, served at the short
+URL above. It is a copy rather than a submodule or a build step, because a user
+site is served from the default branch root and nothing here needs building.
+
+This repository stays the source of truth. To publish a change:
+
+```bash
+tar --exclude='./.git' -cf - . | (cd ../pr1317.github.io && tar -xf -)
+cd ../pr1317.github.io && git add -A && git commit -m "Sync from portfolio" && git push
+```
+
+The Railway-specific files (`Caddyfile`, `Dockerfile`, `railway.json`,
+`render.yaml`) travel with the mirror and are simply unused there. Pages serves
+`404.html` for unknown paths on its own, and `.nojekyll` stops it running the
+tree through Jekyll.
 
 ### Railway
 
