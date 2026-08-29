@@ -1,6 +1,6 @@
 # Portfolio
 
-The source of my personal site: **<https://pr1317.github.io/Portfolio/>**
+The source of my personal site: **<https://portfolio-production-f8b6.up.railway.app/>**
 
 A single static page — my CV, and the projects it points at, with the results
 stated in full.
@@ -31,9 +31,13 @@ and a couple of Google Fonts; open `index.html` in a browser and it works.
 
 ## Publishing it
 
-GitHub Pages serves this repository directly — there is no build step, so
-**Settings → Pages → Source: "Deploy from a branch" → `main` / `/ (root)`** is
-all it needs. Pushes to `main` go live in a minute or so.
+Deployed on Railway from `main`. There is no build step: Railpack detects the
+static site and serves the repository root with Caddy, so a push to `main`
+redeploys it.
+
+It is equally happy on GitHub Pages (**Settings → Pages → Deploy from a branch
+→ `main` / `/ (root)`**); every path in the page is relative, so it works at a
+domain root or under a `/Portfolio/` prefix without changes.
 
 ## Working on it locally
 
