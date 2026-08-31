@@ -90,12 +90,12 @@ render.yaml           Render Blueprint
 The four demos are vendored copies of each project's own demo directory, so the
 site has no external runtime dependency: every link on the page resolves within
 this deployment. Their sources of truth remain
-[opslab](https://github.com/pr1317/opslab),
+[Opslab](https://github.com/pr1317/opslab),
 [customer-churn-analytics](https://github.com/pr1317/customer-churn-analytics),
 [handwritten-digit-recognition](https://github.com/pr1317/handwritten-digit-recognition)
 and [smart-traffic-management](https://github.com/pr1317/smart-traffic-management).
 
-To refresh a demo, re-copy `docs/` from its repository. opslab keeps its demo in
+To refresh a demo, re-copy `docs/` from its repository. Opslab keeps its demo in
 `web/` and generates two of the five files, so its refresh is:
 
 ```bash
@@ -109,7 +109,7 @@ cp web/{index.html,app.js,opslab.js,demo-data.js,report.html} ../portfolio/demos
 
 | Project | What it is | Demo |
 |---|---|---|
-| [opslab](https://github.com/pr1317/opslab) | Operations analytics for BFSI back-office processes — process mining, SPC, SLA survival analysis and a Power BI model linter, on the standard library alone | `/demos/opslab/` |
+| [Opslab](https://github.com/pr1317/opslab) | Operations analytics for BFSI back-office processes — process mining, SPC, SLA survival analysis and a Power BI model linter, on the standard library alone | `/demos/opslab/` |
 | [handwritten-digit-recognition](https://github.com/pr1317/handwritten-digit-recognition) | 98.48% on MNIST; the finding is that deskewing beats model choice | `/demos/digits/` |
 | [customer-churn-analytics](https://github.com/pr1317/customer-churn-analytics) | ROC-AUC 0.846, and whether acting on the prediction pays for itself | `/demos/churn/` |
 | [smart-traffic-management](https://github.com/pr1317/smart-traffic-management) | YOLOv4-tiny and a centroid tracker turning a highway camera into telemetry | `/demos/traffic/` |
