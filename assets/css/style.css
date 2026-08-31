@@ -350,11 +350,28 @@ body.menu-open { overflow: hidden; }
 .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
 @media (min-width: 780px) { .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; } }
 
+/* Each tile is a link through to the role the figure came from, so a
+   claim is never made without a route to its source. */
 .stat {
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--r); padding: 1.15rem 1.25rem;
   display: flex; flex-direction: column; gap: .4rem;
   box-shadow: var(--shadow);
+  height: 100%;
+  text-decoration: none; color: inherit;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.stat:hover {
+  color: inherit;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}
+.stat__src {
+  margin-top: auto; padding-top: .5rem;
+  font-family: var(--mono); font-size: var(--fs-label);
+  color: var(--accent-deep);
+  display: flex; align-items: center; gap: .35rem;
 }
 .stat__value {
   font-family: var(--display); font-size: var(--fs-h2); font-weight: 500;
@@ -374,7 +391,14 @@ body.menu-open { overflow: hidden; }
 @media (min-width: 700px) {
   .perf__row { grid-template-columns: 200px minmax(0, 1fr) 74px; align-items: center; gap: 1.25rem; }
 }
-.perf__name { font-family: var(--mono); font-size: var(--fs-meta); color: var(--muted); }
+.perf__name {
+  font-family: var(--mono); font-size: var(--fs-meta); color: var(--muted);
+  text-decoration: none;
+  display: inline-flex; align-items: center;
+  min-height: 44px;
+}
+.perf__name:hover { color: var(--accent-deep); }
+.perf__name span { margin-left: .4rem; }
 .perf__value {
   font-family: var(--mono); font-size: var(--fs-meta); color: var(--ink);
   text-align: right; font-variant-numeric: tabular-nums;
@@ -383,7 +407,20 @@ body.menu-open { overflow: hidden; }
   grid-column: 1 / -1; height: 8px; border-radius: var(--r-pill);
   background: var(--track); overflow: hidden;
 }
-@media (min-width: 700px) { .perf__track { grid-column: 2; } }
+/* Above 700px the row is three columns. Every child must state its column:
+   left to auto-placement the value lands in column 2 and displaces the track
+   onto a row of its own. This block sits after the base rules above so it
+   wins on source order at equal specificity. */
+@media (min-width: 700px) {
+  /* The row must also be pinned, not just the column: the value precedes the
+     track in the markup (so that on a phone they stack label-then-bar), and
+     auto-placement will not step backwards to fill column 2 once column 3 of
+     the row is taken — it starts a new row instead. */
+  .perf__name  { grid-column: 1; grid-row: 1; }
+  .perf__track { grid-column: 2; grid-row: 1; }
+  .perf__value { grid-column: 3; grid-row: 1; }
+}
+
 .perf__fill {
   display: block; height: 100%; border-radius: var(--r-pill);
   background: var(--accent);
