@@ -25,11 +25,11 @@
 <meta name="theme-color" content="#FBF8F4" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16140F" media="(prefers-color-scheme: dark)">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%237C9A84'/><text x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23fff' text-anchor='middle'>PR</text></svg>">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237C9A84'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23fff' text-anchor='middle'%3EPR%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260831b">
 
 <script>
 /* Applies the stored theme before first paint so the page never flashes
@@ -141,43 +141,47 @@
     </div>
 
     <ul class="stats reveal" style="--d: 1">
-      <li class="stat">
-        <span class="stat__value" data-count-to="35" data-prefix="&minus;" data-suffix="%">&minus;35%</span>
+      <li class="stat-item">
+        <a class="stat" href="#experience"><span class="stat__value" data-count-to="35" data-prefix="&minus;" data-suffix="%">&minus;35%</span>
         <span class="stat__label">Reporting effort</span>
         <span class="stat__note">manual work removed by automating recurring reports</span>
+      <span class="stat__src">TCS · 2025 to now <span aria-hidden="true">&rarr;</span></span></a>
       </li>
-      <li class="stat">
-        <span class="stat__value" data-count-to="18" data-prefix="&minus;" data-suffix="%">&minus;18%</span>
+      <li class="stat-item">
+        <a class="stat" href="#experience"><span class="stat__value" data-count-to="18" data-prefix="&minus;" data-suffix="%">&minus;18%</span>
         <span class="stat__label">SLA breaches</span>
         <span class="stat__note">via Power BI dashboards across 15+ operational KPIs</span>
+      <span class="stat__src">TCS · 2025 to now <span aria-hidden="true">&rarr;</span></span></a>
       </li>
-      <li class="stat">
-        <span class="stat__value" data-count-to="22" data-prefix="+" data-suffix="%">+22%</span>
+      <li class="stat-item">
+        <a class="stat" href="#experience"><span class="stat__value" data-count-to="22" data-prefix="+" data-suffix="%">+22%</span>
         <span class="stat__label">Workflow efficiency</span>
         <span class="stat__note">50K+ monthly records analysed in SQL and Excel</span>
+      <span class="stat__src">TCS · 2025 to now <span aria-hidden="true">&rarr;</span></span></a>
       </li>
-      <li class="stat">
-        <span class="stat__value" data-count-to="100" data-suffix="K+">100K+</span>
+      <li class="stat-item">
+        <a class="stat" href="#experience"><span class="stat__value" data-count-to="100" data-suffix="K+">100K+</span>
         <span class="stat__label">Records analysed</span>
         <span class="stat__note">customer interactions across 12 service teams</span>
+      <span class="stat__src">Diligenta · 2024 <span aria-hidden="true">&rarr;</span></span></a>
       </li>
     </ul>
 
     <div class="perf reveal" style="--d: 2">
-      <span class="perf__head">Model performance &mdash; every figure verifiable in the repository</span>
+      <span class="perf__head">Model performance &mdash; each figure links to the repository that produces it</span>
       <div class="perf__list">
         <div class="perf__row" style="--d: 0">
-          <span class="perf__name">Digit recognition</span>
+          <a class="perf__name" href="https://github.com/pr1317/handwritten-digit-recognition" rel="noopener">Digit recognition<span aria-hidden="true"> &rarr;</span></a>
           <span class="perf__value">98.48%</span>
           <span class="perf__track"><i class="perf__fill" style="--w: 98.5%"></i></span>
         </div>
         <div class="perf__row" style="--d: 1">
-          <span class="perf__name">Churn ROC-AUC</span>
+          <a class="perf__name" href="https://github.com/pr1317/customer-churn-analytics" rel="noopener">Churn ROC-AUC<span aria-hidden="true"> &rarr;</span></a>
           <span class="perf__value">0.846</span>
           <span class="perf__track"><i class="perf__fill" style="--w: 84.6%"></i></span>
         </div>
         <div class="perf__row" style="--d: 2">
-          <span class="perf__name">Churn recall</span>
+          <a class="perf__name" href="https://github.com/pr1317/customer-churn-analytics" rel="noopener">Churn recall<span aria-hidden="true"> &rarr;</span></a>
           <span class="perf__value">0.78</span>
           <span class="perf__track"><i class="perf__fill" style="--w: 78%"></i></span>
         </div>
@@ -483,6 +487,6 @@
   <a class="btn btn--ghost" href="assets/Preetam-Roy-CV.pdf" download>CV</a>
 </div>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/main.js?v=20260831b" defer></script>
 </body>
 </html>
