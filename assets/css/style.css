@@ -505,6 +505,24 @@ body.menu-open { overflow: hidden; }
 .timeline__points li { font-size: var(--fs-meta); color: var(--muted); padding-left: 1rem; position: relative; max-width: 70ch; }
 .timeline__points li::before { content: ""; position: absolute; left: 0; top: .62em; width: 5px; height: 1px; background: var(--accent); }
 
+/* Named systems under a role. The bullets above say what moved; these say what
+   was actually built, so the outcome and the artefact stop competing for the
+   same line. Name and body share --fs-meta and separate on family and colour,
+   which keeps the type scale at eight steps. */
+.builds { display: grid; gap: .75rem; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .builds { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.builds__label { margin: 1.7rem 0 .8rem; color: var(--faint); }
+.build {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--r);
+  padding: .9rem 1.1rem 1rem;
+  box-shadow: var(--shadow);
+}
+.build__name { font-family: var(--mono); font-size: var(--fs-meta); font-weight: 500; color: var(--ink); }
+.build__what { font-size: var(--fs-meta); color: var(--muted); margin-top: .4rem; }
+
 /* ---------- 11. Skills ---------- */
 .skills { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
