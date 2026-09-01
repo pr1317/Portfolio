@@ -65,7 +65,7 @@ index.html                 the portfolio page
 assets/css/style.css       hand-written CSS: eight type tokens, two themes
 assets/js/main.js          ~150 lines of vanilla JS, no libraries
 assets/img/og.png          1200×630 link-preview card
-assets/Preetam-Roy-CV.pdf  CV, with private contact details removed
+assets/Preetam-Roy-CV.pdf  CV, two pages, without private contact details
 demos/opslab/              live SLA breach scorer (bundled from its own repo)
 demos/churn/               live churn scorer      (bundled from its own repo)
 demos/digits/              live digit recogniser  (bundled from its own repo)
@@ -165,7 +165,11 @@ nothing to measure such a figure against.
 
 ## The CV
 
-`assets/Preetam-Roy-CV.pdf` is the public copy. The phone number and the two
-certification ID numbers have been removed from the PDF itself — the glyphs are
-deleted, not covered over — because anything linked from a public page can be
-downloaded and indexed by anyone. Issuers and dates remain.
+`assets/Preetam-Roy-CV.pdf` is the public copy: two pages, A4, no phone number
+and no certification ID numbers, because anything linked from a public page can
+be downloaded and indexed by anyone. Issuers and dates remain.
+
+The named systems in its TCS section — Agent Journey Mapping, the ID crosswalk
+and performance flags, the DSAT allocation engine, the self-contained HTML
+reporting — also appear on the page under that role, so the CV and the site say
+the same thing about the same work.

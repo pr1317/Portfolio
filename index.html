@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=20260901">
+<link rel="stylesheet" href="assets/css/style.css?v=20260901b">
 
 <script>
 /* Applies the stored theme before first paint so the page never flashes
@@ -116,7 +116,7 @@
     </p>
     <div class="hero__actions reveal" style="--d: 3">
       <a class="btn btn--primary" href="#work">See the work</a>
-      <a class="btn btn--ghost" href="assets/Preetam-Roy-CV.pdf?v=20260901" download>Download CV</a>
+      <a class="btn btn--ghost" href="assets/Preetam-Roy-CV.pdf?v=20260901b" download>Download CV</a>
     </div>
     <div class="reveal" style="--d: 4">
       <span class="availability"><i class="availability__dot" aria-hidden="true"></i>Open to roles</span>
@@ -316,6 +316,26 @@
             <li>Applied Lean Six Sigma and exploratory analysis to surface recurring bottlenecks, improving issue resolution speed by 25%.</li>
             <li>Automated recurring reports and KPI monitoring, reducing manual reporting effort by 35%.</li>
           </ul>
+
+          <p class="eyebrow builds__label">What I built</p>
+          <ul class="builds">
+            <li class="build">
+              <h4 class="build__name">Agent Journey Mapping</h4>
+              <p class="build__what">A Python pipeline folding five sources &mdash; WFM roster and milestones, QnT audit scores, CSAT, training records and the agent master &mdash; into one per-agent event table. Four manual file pulls became a single screen for team leaders across 300 agents.</p>
+            </li>
+            <li class="build">
+              <h4 class="build__name">ID crosswalk &amp; performance flags</h4>
+              <p class="build__what">Reconciles employee identifiers across systems and reports the exceptions rather than dropping them. Declining and stalled flags carry hysteresis, so a borderline agent stops flickering in and out week to week, and they are read against tenure-matched cohort baselines.</p>
+            </li>
+            <li class="build">
+              <h4 class="build__name">DSAT allocation engine</h4>
+              <p class="build__what">Distributes dissatisfaction cases across auditors with workload balancing and self-review exclusion. Weekly allocation effort down 50%.</p>
+            </li>
+            <li class="build">
+              <h4 class="build__name">Self-contained HTML reporting</h4>
+              <p class="build__what">Plotly inlined into one file, alongside an Excel export published to SharePoint. No server, no licence and nothing to install client-side &mdash; which is what makes it deployable on a locked-down corporate network at all.</p>
+            </li>
+          </ul>
         </div>
       </article>
 
@@ -484,9 +504,9 @@
 
 <div class="dock" id="dock" aria-hidden="true">
   <a class="btn btn--primary" href="mailto:roypreetam13@gmail.com">Email me</a>
-  <a class="btn btn--ghost" href="assets/Preetam-Roy-CV.pdf?v=20260901" download>CV</a>
+  <a class="btn btn--ghost" href="assets/Preetam-Roy-CV.pdf?v=20260901b" download>CV</a>
 </div>
 
-<script src="assets/js/main.js?v=20260901" defer></script>
+<script src="assets/js/main.js?v=20260901b" defer></script>
 </body>
 </html>
